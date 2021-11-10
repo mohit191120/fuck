@@ -18,10 +18,12 @@ bash ~/git_cookies.sh
 
 # Rom repo sync & dt ( Add roms and update case functions )
 rom_one(){
-     repo init --depth=1 --no-repo-verify -u https://github.com/HyconOS/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
-     git clone https://github.com/TheSanty/local_manifests.git -b $rom .repo/local_manifests
+     repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b elle -g default,-device,-mips,-darwin,-notdefault
+     git clone https://${TOKEN}@github.com/YadavMohit19/local_manifests -b evo .repo/local_manifests
      repo sync -c --no-clone-bundle --no-tags --optimized-fetch --force-sync -j$(nproc --all)
-     . build/envsetup.sh && lunch aosp_whyred-user
+     export ALLOW_MISSING_DEPENDENCIES=true
+     #export SKIP_ABI_CHECKS=true
+     . build/envsetup.sh && lunch evolution_RMX3031-eng
 }
 
 rom_two(){
