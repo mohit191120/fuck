@@ -137,7 +137,7 @@ commit_sha() {
 
 # Function to be chose based on rom flag in .yml
 case "${T_ROM}" in
- "HyconOS") rom_one
+ "Evo") rom_one
     ;;
  "CorvusOS") rom_two
     ;;
@@ -194,7 +194,7 @@ ccache -z
 
 # Build commands for each roms on basis of rom flag in .yml / an additional full build.log is kept.
 case "${T_ROM}" in
- "HyconOS") mka bacon -j18 2>&1 | tee build.log
+ "Evo") mka evolution -j18 2>&1 | tee build.log
     ;;
  "CorvusOS") make corvus -j18 2>&1 | tee build.log
     ;;
